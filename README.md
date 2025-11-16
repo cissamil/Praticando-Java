@@ -1,7 +1,7 @@
 <h1>
     <a href="https://www.dio.me/">
      <img align="center" width="40px" src="https://hermes.digitalinnovation.one/assets/diome/logo-minimized.png"></a>
-    <span> Exercício Java - Bootcamp Java</span>
+    <span> Exercícios Java - Bootcamp DIO </span>
 </h1>
 
  - Criado por: José Luiz Abreu Cardoso Junior
