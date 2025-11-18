@@ -8,6 +8,9 @@
  - Resolução: Clarissa Morita
  > Este repositório contém as resoluções dos seguintes exercícios:
 ---
+
+# Fundamentos
+
 1. Escreva um código que receba o nome e o ano de nascimento de alguém e imprima na tela a seguinte mensagem: "Olá 'Fulano' você tem 'X' anos"
 
 2. Escreva um código que receba o tamanho do lado de um quadrado, calcule sua área e exiba na tela
@@ -19,6 +22,9 @@
 4. Escreva um código que receba o nome e a idade de 2 pessoas e imprima a diferença de idade entre elas
 
 ---
+
+# Estrutura Controle
+
 1. Escreva um código onde o usuário entra com um número e seja gerada a tabuada de 1 até 10 desse número;
 
 2. Escreva um código onde o usuário entra com sua altura e peso, seja feito o calculo do seu IMC(IMC = peso/(altura * altura)) e seja exibida a mensagem de acordo com o resultado:
@@ -35,7 +41,7 @@
 
 ---
 
-# Exercícios
+# Classe e encapsulamento
 
 ## todos os execicios devem ter um menu de interativo para chamar as funções e ter uma opção de sair para finalizar a execução
 
@@ -103,3 +109,5 @@ Siga as seguintes regras para implementação
    - Se o pet for retirado da maquina sem estar limpo será necessário limpar a máquina para permitir a entrada de outro pet;
    - A limpeza da máquina ira consumir 3 litros de água e 1 litro de shampoo;
    - O abastecimento de água e shampoo deve permitir 2 litros por vez que for acionado;
+---
+# Proximo...
