@@ -12,6 +12,7 @@ public class tabuada{
       int tabuada = num * fator;
       System.out.printf("Tabuada do %d: %d\n", num, tabuada);
     }
+    scanner.close();
     
   }
  
