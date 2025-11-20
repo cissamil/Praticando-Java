@@ -2,9 +2,6 @@ package aulaClasse;
 
 public class Person {
     
-
-private String male;
-private String female;
 private String name;
 private int age;
 
