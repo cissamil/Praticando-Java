@@ -19,13 +19,6 @@ public class ContaBancaria {
     
     }
 
-    public double consultarSaldo(){
-        return saldo;
-    }
-
-    public double consultarCheque(){
-        return chequeEspecial;
-    }
 
     public void depositar(double valor){
         //valor invalido sai do metodo
@@ -50,24 +43,56 @@ public class ContaBancaria {
 
         double sobra = valor - faltaQuitar;
         saldo += sobra;
-        
+
         double taxa = usadoAntes * 0.20;
         saldo -= taxa;
             
         return;
 
         }
-        //saldo positivo
+        //caso 2: saldo positivo + deposito
         saldo += valor;
 
     }
 
     public boolean sacar(double valor){
-        return false;
-    }
+
+        if(valor <= 0){
+            System.out.println("Erro, saque um valor valido!");
+            return false;
+        }
+
+        //verificar o total = saldo + cheque - valor usado cheque
+        double capacidadeTotal = saldo + (chequeEspecial - valorUsadoCheque);
+
+        if (valor > capacidadeTotal){
+            System.out.println("saldo inuficiente mesmo com cheque!");
+            return false;
+        }
+        //caso 1: saldo positivo
+        if(saldo > 0){
+            saldo -= valor;
+            return true;
+        }
+
+        //caso 2: saldo negativo, usar o cheque disponivel
+        double falta = valor - saldo;
+        saldo =- falta;
+        valorUsadoCheque += falta;
+        return true;
+        } 
+
 
     public boolean pagarBoleto(double valor){
         return false;
+    }
+
+     public double consultarSaldo(){
+        return saldo;
+    }
+
+    public double consultarCheque(){
+        return chequeEspecial;
     }
 
     public boolean usouCheque(){
