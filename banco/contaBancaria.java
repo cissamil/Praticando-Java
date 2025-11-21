@@ -28,6 +28,37 @@ public class ContaBancaria {
     }
 
     public void depositar(double valor){
+        //valor invalido sai do metodo
+        if(valor <= 0){
+            System.out.println("Deposito invalido");
+            return;
+        } 
+        //caso 1: usou o cheque 
+        if(saldo < 0){
+            double faltaQuitar = valorUsadoCheque;
+            //e o deposito for menor que a divida
+            if(valor < faltaQuitar){
+                saldo += valor;
+                valorUsadoCheque -= valor;
+                return;
+            }
+
+        //ou deposito cobre toda a divida
+        double usadoAntes = valorUsadoCheque;
+        saldo = 0;
+        valorUsadoCheque = 0;
+
+        double sobra = valor - faltaQuitar;
+        saldo += sobra;
+        
+        double taxa = usadoAntes * 0.20;
+        saldo -= taxa;
+            
+        return;
+
+        }
+        //saldo positivo
+        saldo += valor;
 
     }
 
