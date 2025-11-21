@@ -29,6 +29,7 @@ public class ContaBancaria {
         //caso 1: usou o cheque 
         if(saldo < 0){
             double faltaQuitar = valorUsadoCheque;
+
             //e o deposito for menor que a divida
             if(valor < faltaQuitar){
                 saldo += valor;
@@ -36,16 +37,10 @@ public class ContaBancaria {
                 return;
             }
 
-        //ou deposito cobre toda a divida
-        double usadoAntes = valorUsadoCheque;
-        saldo = 0;
+        saldo += valor;
+        saldo -= faltaQuitar;
         valorUsadoCheque = 0;
-
-        double sobra = valor - faltaQuitar;
-        saldo += sobra;
-
-        double taxa = usadoAntes * 0.20;
-        saldo -= taxa;
+        cobrarTaxa();
             
         return;
 
@@ -72,6 +67,7 @@ public class ContaBancaria {
         //caso 1: saldo positivo
         if(saldo > 0){
             saldo -= valor;
+            System.out.println("Sucesso");
             return true;
         }
 
@@ -79,12 +75,13 @@ public class ContaBancaria {
         double falta = valor - saldo;
         saldo =- falta;
         valorUsadoCheque += falta;
+        System.out.println("Sucesso!");
         return true;
         } 
 
 
     public boolean pagarBoleto(double valor){
-        return false;
+        return sacar(valor);
     }
 
      public double consultarSaldo(){
@@ -100,6 +97,10 @@ public class ContaBancaria {
     }
 
     private void cobrarTaxa(){
+        double taxa = valorUsadoCheque * 0.20;
+        saldo -= taxa;
+        valorUsadoCheque = 0;
+        System.out.printf("Taxa de cheque especial cobrada: %.2f", taxa);
 
     }
 }
